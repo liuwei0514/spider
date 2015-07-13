@@ -1,0 +1,18 @@
+{
+    "name": "taobao蜘蛛",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "抓取聚划算数据",
+    "permissions": [
+        "http://*.taobao.com/"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["http://ju.taobao.com/*"],
+        "js": ["jquery.js","async.min.js", "js.js"],
+        "run_at": "document_end"
+    }]
+}
