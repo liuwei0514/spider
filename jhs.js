@@ -1,10 +1,11 @@
 jQuery(document).ready(function($) {
     //女装 裙装	
+    var root = "https://localhost:3001/";
     async.waterfall([
         function(callback) {
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3000/api/v2/productcategories",
+                url: root + "api/v2/jhscategories",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(data) {
@@ -25,12 +26,12 @@ jQuery(document).ready(function($) {
                     },
                     function(json, cb) {
                         var data = {
-                            categoryName: item.name,
+                            category: item._id,
                             itemList: json.itemList
                         };
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost:3000/api/v2/products",
+                            url: root + "api/v2/jhs",
                             data: JSON.stringify(data),
                             contentType: "application/json; charset=utf-8",
                             success: function() {
