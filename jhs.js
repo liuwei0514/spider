@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     //女装 裙装	
-    var root = "https://localhost:3001/";
+    var root = "https://data.800-taobao.com/";
     async.waterfall([
         function(callback) {
             $.ajax({

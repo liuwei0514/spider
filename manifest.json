@@ -1,8 +1,8 @@
 {
-    "name": "taobao蜘蛛--聚划算",
+    "name": "taobao蜘蛛",
     "version": "1.0",
     "manifest_version": 2,
-    "description": "抓取聚划算数据",
+    "description": "抓取淘宝数据",
     "permissions": [
         "*://*.taobao.com/"
     ],
@@ -21,6 +21,10 @@
     }, {
         "matches": ["https://tejia.taobao.com/?c"],
         "js": ["jquery.js", "async.min.js", "tejia.js"],
+        "run_at": "document_end"
+    }, {
+        "matches": ["https://qiang.taobao.com/?c"],
+        "js": ["jquery.js", "async.min.js", "qiang.js"],
         "run_at": "document_end"
     }]
 }
