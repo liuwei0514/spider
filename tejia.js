@@ -21,22 +21,6 @@ jQuery(document).ready(function($) {
                 async.waterfall([
                     function(cb) {
 
-                        // $.ajax({
-                        //     url: item.url,
-                        //     contentType: "application/json; charset=utf-8",
-                        //     dataType: "json",
-                        //     // Work with the response
-                        //     success: function(response) {
-                        //         console.log(response); // server response
-
-                        //         cb(null, response);
-                        //     }
-                        // });
-
-                        // $.getJSON(item.url, function(json, textStatus) {
-                        //     cb(null, json);
-                        // });
-
                         var xhr = new XMLHttpRequest();
                         var url = item.url.replace("callback=?","callback=callback");
                         xhr.open("GET", url, true);
@@ -61,7 +45,7 @@ jQuery(document).ready(function($) {
                         };
                         $.ajax({
                             type: "POST",
-                            url: root + "api/v2/tejia",
+                            url: root + "api/v3/tejia",
                             data: JSON.stringify(data),
                             contentType: "application/json; charset=utf-8",
                             success: function() {

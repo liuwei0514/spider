@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
                         };
                         $.ajax({
                             type: "POST",
-                            url: root + "api/v2/qing",
+                            url: root + "api/v3/qing",
                             data: JSON.stringify(data),
                             contentType: "application/json; charset=utf-8",
                             success: function() {
